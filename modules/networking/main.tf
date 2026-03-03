@@ -46,9 +46,8 @@ resource "aws_route_table_association" "a" {
   route_table_id = aws_route_table.rt.id
 }
 
-
 resource "aws_launch_template" "jenkins" {
-  name = "jenkins-template"
+  name     = "jenkins-template"
 
 
   block_device_mappings {
@@ -63,13 +62,10 @@ resource "aws_launch_template" "jenkins" {
     capacity_reservation_preference = "open"
   }
 
-
   credit_specification {
     cpu_credits = "standard"
   }
 
-  # disable_api_stop        = true
-  # disable_api_termination = true
 
   ebs_optimized = true
 
@@ -79,14 +75,8 @@ resource "aws_launch_template" "jenkins" {
  }
   image_id = "ami-0ba0c1a358147d1a8"
 
-  instance_initiated_shutdown_behavior = "terminate"
-
-  instance_market_options {
-    market_type = "spot"
-  }
-
+  instance_initiated_shutdown_behavior = "stop"
   instance_type = "t3.micro"
-
 
   metadata_options {
     http_endpoint               = "enabled"
@@ -94,22 +84,9 @@ resource "aws_launch_template" "jenkins" {
     http_put_response_hop_limit = 1
     instance_metadata_tags      = "enabled"
   }
-
   monitoring {
     enabled = true
   }
-
-  # network_interfaces {
-  #   associate_public_ip_address = true
-  #   # security_groups = [var.security_group_id_ec2]
-  # }
-
-  placement {
-    availability_zone = "eu-west-2b"
-  }
-
-
-
   tag_specifications {
     resource_type = "instance"
 
@@ -121,19 +98,24 @@ resource "aws_launch_template" "jenkins" {
   user_data = filebase64("${path.module}/userdata.sh")
 }
 
+
 resource "aws_instance" "example" {
  launch_template {
    id = aws_launch_template.jenkins.id 
-   version = "$Latest"
+  
  }
   instance_type = "t3.micro"
+
   depends_on = [aws_iam_instance_profile.profile]
+
    subnet_id = aws_subnet.public[0].id 
    vpc_security_group_ids = [var.security_group_id_ec2]
-  associate_public_ip_address = true
+   associate_public_ip_address = true
    user_data_replace_on_change = true 
+   key_name = "Jenkins-ssh"
+
   lifecycle {
-    # Optional: ensure the new one works before killing the old one
+    # ensure the new one works before killing the old one
     create_before_destroy = true
   }
 
@@ -163,3 +145,14 @@ resource "aws_iam_role" "jenkins_role" {
     ]
   })
 }
+
+
+# resource "aws_key_pair" "jenkins_key" {
+#   key_name   = "jenkins-server-ssh"
+#   public_key = tls_private_key.example.public_key_openssh
+# }
+
+# resource "tls_private_key" "example" {
+#   algorithm = "RSA"
+#   rsa_bits  = 4096
+# }

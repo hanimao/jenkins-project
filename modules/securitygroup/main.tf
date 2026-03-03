@@ -46,11 +46,20 @@ resource "aws_security_group" "ec2" {
 
 resource "aws_vpc_security_group_ingress_rule" "ec2" {
   security_group_id = aws_security_group.ec2.id
-  referenced_security_group_id = aws_security_group.alb.id # source
+  referenced_security_group_id = aws_security_group.alb.id 
   
   from_port   = 8080
   ip_protocol = "tcp"
   to_port     = 8080
+}
+
+resource "aws_vpc_security_group_ingress_rule" "ec2_2" {
+  security_group_id = aws_security_group.ec2.id
+  
+  from_port   = 22
+  ip_protocol = "tcp"
+  to_port     = 22
+  cidr_ipv4 = "0.0.0.0/0"
 }
 
 

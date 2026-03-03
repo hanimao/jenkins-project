@@ -11,3 +11,4 @@ output "subnet_ids" {
 output "instance" {
   value = aws_instance.example.id 
 }
+
