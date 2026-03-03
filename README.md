@@ -48,7 +48,7 @@ jenkins/
 
 # Architecture  
 
-![architecture diagram](<images/jenkins.svg>)
+![architecture diagram](<images/Jenkins.svg>)
 
 ---
 
@@ -65,16 +65,7 @@ jenkins/
 
 - An AWS account
 - An Amazon EC2 key pair. If you don’t have one, refer to Creating a key pair.
-- An AWS IAM User with programmatic key access and permissions to launch EC2 instances
-
-
-
-
-
-
-
-
-
+- An AWS IAM User with programmatic key access and permissions to launch EC2 instancess
 ---
 
 ### **Here's what it will look like**
