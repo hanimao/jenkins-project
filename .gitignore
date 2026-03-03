@@ -90,4 +90,4 @@ override.tf.json
 .terraformrc
 terraform.rc
 .terraform.lock.hcl
-.AWSCLIV2.pkg
+AWSCLIV2.pkg
