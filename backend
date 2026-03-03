@@ -1,0 +1,8 @@
+terraform {
+  backend "s3" {
+    bucket = "jenkin-bucket-01"
+    key    = "jenkin/server/state/key"
+    region = "eu-west-2"
+    use_lockfile = true
+  }
+}
