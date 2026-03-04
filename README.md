@@ -64,7 +64,7 @@ jenkins/
 ### Pre-requisites 
 
 - An AWS account
-- An Amazon EC2 key pair. If you don’t have one, refer to Creating a key pair.
+- An Amazon EC2 key pair. If you don’t have one, refer to creating a key pair.
 - An AWS IAM User with programmatic key access and permissions to launch EC2 instancess
 ---
 
@@ -77,10 +77,7 @@ Connect to http://<your_server_public_DNS> from your browser. You will be able t
 
 - SSH into the EC2 instance and enter the password found in **/var/lib/jenkins/secrets/initialAdminPassword**.
 - Create First Admin User
-- Select Manage Jenkins, and then select Manage Plugins.
-- Select the Available tab,then enter Amazon EC2 plugin at the top right.
-- Select the checkbox next to Amazon EC2 plugin, and then select install without restart.
-- Once the installation is done, select Back to Dashboard.
+- Once the set up is done, the jenkins Dashboard will appear.
 
 ![jenkins-server](images/dashboard.png)
 
