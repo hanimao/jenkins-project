@@ -23,29 +23,6 @@ This project demonstrates a **jenkin server** deployed on AWS using **Terraform*
 
 ---
 
-# Directory Structure
-
-```text
-
-jenkins/
-├── .terraform/                
-├──  modules/               
-│       ├── alb/              
-│       ├── networking/        
-│       ├── route53/           
-│       └── securitygroup/     
-├── .gitignore                 
-├── .pre-commit-config        
-├── backend            
-├── main.tf                    
-├── provider.tf               
-├── README.md                  
-└── variables.tf               
-   
-```
-
----
-
 # Architecture  
 
 ![architecture diagram](<images/Jenkins.svg>)

@@ -7,11 +7,7 @@ resource "aws_lb" "test" {
 
   enable_deletion_protection = false
 
-  # access_logs {
-  #   bucket  = aws_s3_bucket.lb_logs.id
-  #   prefix  = "test-lb"
-  #   enabled = true
-  # }
+
 
   tags = {
     Environment = "testing"
