@@ -1,6 +1,6 @@
 module "networking" {
     source = "./modules/networking"
-  security_group_id_ec2 = module.securitygroup.security_group_id_ec2
+    security_group_id_ec2 = module.securitygroup.security_group_id_ec2
 }
 
 module "alb" {

@@ -57,16 +57,12 @@ resource "aws_launch_template" "jenkins" {
       volume_size = 20
     }
   }
-
   capacity_reservation_specification {
     capacity_reservation_preference = "open"
   }
-
   credit_specification {
     cpu_credits = "standard"
   }
-
-
   ebs_optimized = true
 
  iam_instance_profile {
@@ -106,8 +102,7 @@ resource "aws_instance" "example" {
  }
   instance_type = "t3.micro"
 
-  depends_on = [aws_iam_instance_profile.profile]
-
+   depends_on = [aws_iam_instance_profile.profile]
    subnet_id = aws_subnet.public[0].id 
    vpc_security_group_ids = [var.security_group_id_ec2]
    associate_public_ip_address = true
@@ -115,14 +110,13 @@ resource "aws_instance" "example" {
    key_name = "Jenkins-ssh"
 
   lifecycle {
-    # ensure the new one works before killing the old one
     create_before_destroy = true
   }
-
   tags = {
     Name = "testing"
   }
 }
+
 resource "aws_iam_instance_profile" "profile" {
   name = "profile"
   role = aws_iam_role.jenkins_role.name 
@@ -147,12 +141,3 @@ resource "aws_iam_role" "jenkins_role" {
 }
 
 
-# resource "aws_key_pair" "jenkins_key" {
-#   key_name   = "jenkins-server-ssh"
-#   public_key = tls_private_key.example.public_key_openssh
-# }
-
-# resource "tls_private_key" "example" {
-#   algorithm = "RSA"
-#   rsa_bits  = 4096
-# }

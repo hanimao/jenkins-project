@@ -5,5 +5,5 @@ variable "azs" {
 
 variable "security_group_id_ec2" {
   type = string
-  description = "security group for EC2"
+  description = "EC2 security group allowing traffic only from ALB"
 }
