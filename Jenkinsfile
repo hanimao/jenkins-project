@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                 
-                    sh "docker build -t ${REPOSITORY_URI}:latest -t ${REPOSITORY_URI}:${IMAGE_TAG} ."
+                    sh "docker build -t ${REPOSITORY_URI}:latest -t ${REPOSITORY_URI}:${IMAGE_TAG} ./app"
                 }
             }
         }
