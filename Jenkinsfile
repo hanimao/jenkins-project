@@ -29,7 +29,7 @@ pipeline {
 
           stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/hanimao/jenkins-project'
+                git 'https://github.com/hanimao/jenkins-project'
             }
         }
 
