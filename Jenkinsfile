@@ -11,12 +11,12 @@ pipeline {
     }
 
     stages {
-        stage('Checkout Code') {
-            steps {
-        
-                checkout scm
+        stage('Checkout'){
+           steps {
+               git branch: 'main', url: 'https://github.com/hanimao/jenkins-project'
             }
         }
+    
 
         stage('Logging into Amazon ECR') {
             steps {
