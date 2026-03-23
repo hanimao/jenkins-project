@@ -36,7 +36,7 @@ resource "aws_vpc_security_group_egress_rule" "alb" {
 
 
 resource "aws_security_group" "ec2" {
-  name        = "ECS-SG"
+  name        = "EC2-SG"
   description = "The SG for the EC2 instance. Allows traffic from the ALB only."
   vpc_id      = var.vpc_id
   tags = {
