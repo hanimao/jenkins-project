@@ -41,7 +41,7 @@ This project demonstrates a **jenkin server** deployed on AWS using **Terraform*
 ### Pre-requisites 
 
 - An AWS account
-- An Amazon EC2 key pair. If you don’t have one, refer to creating a key pair.
+- An Amazon EC2 key pair
 - An AWS IAM User with programmatic key access and permissions to launch EC2 instancess
 ---
 
@@ -59,4 +59,12 @@ Connect to http://<your_server_public_DNS> from your browser. You will be able t
 ![jenkins-server](images/dashboard.png)
 
 
+To build Jenkins pipeline to create Docker image and push the image to AWS Elastic Container Registry (ECR) on Amazon Linux 2 EC2 instance.
 
+Part 1 - Launch a Jenkins Server Configured for ECR Management
+
+Part 2 - Prepare the Image Repository on ECR and Project Repository on GitHub with Webhook
+
+Part 3 - Create Jenkins Pipeline for the Project with GitHub Webhook
+
+Part 4 - Clean up the Image Repository on AWS ECR

@@ -72,7 +72,7 @@ resource "aws_launch_template" "jenkins" {
   image_id = "ami-0ba0c1a358147d1a8"
 
   instance_initiated_shutdown_behavior = "stop"
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
 
   metadata_options {
     http_endpoint               = "enabled"
@@ -100,7 +100,7 @@ resource "aws_instance" "example" {
    id = aws_launch_template.jenkins.id 
   
  }
-  instance_type = "t3.micro"
+  instance_type = "t3.small"
 
    depends_on = [aws_iam_instance_profile.profile]
    subnet_id = aws_subnet.public[0].id 
