@@ -106,10 +106,10 @@ The docker agent config is now successful.
 
 ### Jenkins Pipeline
 
-To build Jenkins pipeline to create Docker image and push the image to AWS Elastic Container Registry (ECR).
+This Jenkins pipeline automates the process of bulding a Docker image and pushes the image to AWS Elastic Container Registry (ECR).
 
 - Create the Image Repository on ECR and Project Repository on GitHub with Webhook
-- Create Jenkins Pipeline (jenkinsfile) for the Project with GitHub Webhook
+- Create a jenkinsfile that shows your steps and jobs
 - Define your jenkins Pipeline script from SCM
 - Clean up the Image Repository on AWS ECR
 
