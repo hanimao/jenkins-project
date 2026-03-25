@@ -101,7 +101,7 @@ The docker agent config is now successful.
 
 ### Set Up Credentials 
 
-- Go to Manage Jenkins -> Manage Credentials.
+- Go to Manage Jenkins > Manage Credentials.
 - Add the following credentials: AWS Access Key ID and Secret Access Key.
 
 ### Jenkins Pipeline
