@@ -114,4 +114,4 @@ To build Jenkins pipeline to create Docker image and push the image to AWS Elast
 - Clean up the Image Repository on AWS ECR
 
 
-![jenkins-pipeline](images/jenkins-pipeline.png)
+![pipeline](images/pipeline.png)
