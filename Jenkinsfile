@@ -6,7 +6,6 @@ pipeline {
         AWS_DEFAULT_REGION = 'eu-west-2'
         IMAGE_NAME         = 'jenkins'
         IMAGE_TAG          = "${env.BUILD_NUMBER}"
-
         REPOSITORY_URI     = "${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_DEFAULT_REGION}.amazonaws.com/${IMAGE_NAME}"
     }
 
@@ -17,7 +16,6 @@ pipeline {
             }
         }
     
-
         stage('Logging into Amazon ECR') {
             steps {
                 script {

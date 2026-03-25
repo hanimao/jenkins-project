@@ -115,3 +115,8 @@ To build Jenkins pipeline to create Docker image and push the image to AWS Elast
 
 
 ![pipeline](images/pipeline.png)
+
+
+## Troubleshoot
+
+Build Executor Status - Make sure the agent is online and not offline.
