@@ -99,7 +99,7 @@ The docker agent config is now successful.
 - Select the plugin and click the Install button.
 - Restart Jenkins after the plugin is installed.
 
-## Set Up Credentials 
+### Set Up Credentials 
 
 - Go to Manage Jenkins -> Manage Credentials.
 - Add the following credentials: AWS Access Key ID and Secret Access Key.
@@ -109,8 +109,8 @@ The docker agent config is now successful.
 To build Jenkins pipeline to create Docker image and push the image to AWS Elastic Container Registry (ECR).
 
 - Create the Image Repository on ECR and Project Repository on GitHub with Webhook
-- Create Jenkins Pipeline for the Project with GitHub Webhook
-- Create a new pipeline jenkins 
+- Create Jenkins Pipeline (jenkinsfile) for the Project with GitHub Webhook
+- Define your jenkins Pipeline script from SCM
 - Clean up the Image Repository on AWS ECR
 
 
