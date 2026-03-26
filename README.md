@@ -45,7 +45,16 @@ This project demonstrates a **jenkin server** deployed on AWS using **Terraform*
 
 ### Install Jenkins and Java
 
-Use a user data script to automate the installation. Go to the userdata.sh folder.
+- Use a user data script to automate the installation. Go to the userdata.sh folder.
+
+### Connect to the Instance
+
+Connect to http://<your_server_public_DNS> from your browser. You will be able to access Jenkins through its management interface:
+
+- SSH into the instance from your local machine. Replace <your-key-pair> with your key pair filename and <your-ec2-instance-public-ip> with the public IP of your EC2 instance. Then enter the password found in sudo cat **/var/lib/jenkins/secrets/initialAdminPassword**
+- Then Click on Install suggested Pluggins
+- Create First Admin User
+- Once the set up is done, the jenkins Dashboard will appear.
 
 
 ### **Here's what it will look like**
@@ -53,12 +62,6 @@ Use a user data script to automate the installation. Go to the userdata.sh folde
 
 ![jenkins-server](images/jenkins-server.png)
 
-Connect to http://<your_server_public_DNS> from your browser. You will be able to access Jenkins through its management interface:
-
-- Connect to the EC2 instance and enter the password found in sudo cat **/var/lib/jenkins/secrets/initialAdminPassword**
-- Then Click on Install suggested Pluggins
-- Create First Admin User
-- Once the set up is done, the jenkins Dashboard will appear.
 
 ![jenkins-server](images/dashboard.png)
 
