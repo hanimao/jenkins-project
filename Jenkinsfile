@@ -2,6 +2,7 @@ pipeline {
     agent any
     
     environment {
+        MY_AWS_ID = "${env.AWS_ACCOUNT_ID}"
         AWS_DEFAULT_REGION = 'eu-west-2'
         IMAGE_NAME         = 'jenkins'
         IMAGE_TAG          = "${env.BUILD_NUMBER}"
