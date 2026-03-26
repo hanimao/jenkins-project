@@ -122,4 +122,4 @@ This Jenkins pipeline automates the process of bulding a Docker image and pushes
 
 ## Troubleshoot
 
-Build Executor Status - Make sure the agent is online 
+Build Executor Status - Make sure the agent is online..
