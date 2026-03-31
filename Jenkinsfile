@@ -1,8 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:18-alpine'
-    
+    agent any
+
     environment {
         MY_AWS_ID = "${env.AWS_ACCOUNT_ID}"
         AWS_DEFAULT_REGION = 'eu-west-2'
