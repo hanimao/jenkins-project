@@ -123,4 +123,12 @@ This Jenkins pipeline automates the process of bulding a Docker image and pushes
 ## Troubleshoot
 
 - Build Executor Status - Make sure the agent is online.
-- When configuring the pipeline make sure the GitHub hook trigger for GITScm polling is on..
+- When configuring the pipeline make sure the GitHub hook trigger for GITScm polling is on.
+- Go to Manage Jenkins > System.
+Scroll down to Global properties.
+Check the box Environment variables.
+Click Add.
+Name: AWS_ACCOUNT_ID
+Value:(Your actual AWS ID).
+Click Save.
+- Make sure in your Jenkinsfile: Make sure you refer to it as env.AWS_ACCOUNT_ID
