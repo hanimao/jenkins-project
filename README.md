@@ -131,4 +131,4 @@ Click Add.
 Name: AWS_ACCOUNT_ID
 Value:(Your actual AWS ID).
 Click Save.
-- Make sure in your Jenkinsfile: Make sure you refer to it as env.AWS_ACCOUNT_ID.
+- Make sure in your Jenkinsfile: Make sure you refer to it as env.AWS_ACCOUNT_ID
