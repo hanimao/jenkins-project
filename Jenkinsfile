@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node:18-alpine'
     
     environment {
         MY_AWS_ID = "${env.AWS_ACCOUNT_ID}"
